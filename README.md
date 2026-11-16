@@ -1,6 +1,6 @@
 # Understanding Deep Learning — C++ Implementations
 
-From-scratch C++20 implementations and benchmarks of core mathematical concepts from Simon J.D. Prince's *Understanding Deep Learning*, built with zero external dependencies.
+C++ implementations and benchmarks of core mathematical concepts from Simon J.D. Prince's *Understanding Deep Learning*, built with zero external dependencies.
 
 ## Contents
 
