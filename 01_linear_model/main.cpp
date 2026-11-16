@@ -114,27 +114,24 @@ int main()
 	auto start_closed{ std::chrono::high_resolution_clock::now() };
 	linearModel.train_closedForm(data_set);
 	auto end_closed{ std::chrono::high_resolution_clock::now() };
+	auto duration_closed_ns{ std::chrono::duration_cast<std::chrono::nanoseconds>(end_closed - start_closed) };
 
 	std::cout << "Closed form LOSS: " << linearModel.loss(data_set) << '\n';
 	std::cout << "weight: " << linearModel.get_w() << ", bias: " << linearModel.get_b() << "\n";
+	std::cout << "Closed form training time: " << duration_closed_ns << '\n';
 	std::cout << '\n';
 
-	linearModel.reset();
 	// Measurement of gradient descent form training
-	
+	linearModel.reset();
 	auto start_gradient{ std::chrono::high_resolution_clock::now() };
 	linearModel.train_gradientDescend(data_set, 0.03f, 150);
 	auto end_gradient{ std::chrono::high_resolution_clock::now() };
+	auto duration_gradient_ns{ std::chrono::duration_cast<std::chrono::nanoseconds>(end_gradient - start_gradient) };
 
 	std::cout << "Gradient descent LOSS: " << linearModel.loss(data_set) << '\n';
 	std::cout << "weight: " << linearModel.get_w() << ", bias: " << linearModel.get_b() << "\n";
-	std::cout << '\n';
-
-	auto duration_closed_ns{ std::chrono::duration_cast<std::chrono::nanoseconds>(end_closed - start_closed) };
-	auto duration_gradient_ns{ std::chrono::duration_cast<std::chrono::nanoseconds>(end_gradient - start_gradient) };
-
-	std::cout << "Closed form training time: " << duration_closed_ns << '\n';
 	std::cout << "Gradient descent training time: " << duration_gradient_ns << '\n';
+	std::cout << '\n';
 
 	return 0;
 }
