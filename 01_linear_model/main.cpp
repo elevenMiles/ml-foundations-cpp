@@ -108,7 +108,6 @@ int main()
 		data_set.push_back(Pair{ x, x * slope + y_int });
 	}
 
-	// Loss calculation
 	LinearModel linearModel;
 
 	// Measurement of closed form training
@@ -120,8 +119,9 @@ int main()
 	std::cout << "weight: " << linearModel.get_w() << ", bias: " << linearModel.get_b() << "\n";
 	std::cout << '\n';
 
-	// Measurement of gradient descent form training
 	linearModel.reset();
+	// Measurement of gradient descent form training
+	
 	auto start_gradient{ std::chrono::high_resolution_clock::now() };
 	linearModel.train_gradientDescend(data_set, 0.03f, 150);
 	auto end_gradient{ std::chrono::high_resolution_clock::now() };
