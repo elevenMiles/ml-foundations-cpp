@@ -13,7 +13,7 @@ C++ implementations and benchmarks of core mathematical concepts from Simon J.D.
 
 Using **10 hidden ReLU units** (`31` trainable parameters), the network learns a piecewise-linear approximation of $f(x) = 0.5x^2$ over $x \in [-2, 2]$, reducing Least Squares Error (LSE) loss by **99.96%**.
 
-### Terminal Output
+### Terminal Output ->
 
 ```text
 NETWORK INFO: [input=1, hidden=10, output=1, parameters=31]
