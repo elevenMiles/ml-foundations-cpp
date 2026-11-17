@@ -9,7 +9,7 @@ C++ implementations and benchmarks of core mathematical concepts from Simon J.D.
 - **Gradient Descent:** Iterative optimization using squared error loss derivatives.
 - **Benchmark:** Execution time comparison using `std::chrono::high_resolution_clock`.
 
-## 02. Shallow Neural Network (`02_shallow_neural_network`)
+### 02. Shallow Neural Network (`02_shallow_neural_network`)
 
 Using **10 hidden ReLU units** (`31` trainable parameters), the network learns a piecewise-linear approximation of $f(x) = 0.5x^2$ over $x \in [-2, 2]$, reducing Least Squares Error (LSE) loss by **99.96%**.
 
